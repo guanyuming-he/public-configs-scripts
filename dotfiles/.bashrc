@@ -114,6 +114,8 @@ fi
 
 # For modularity, public and private bash configs are kept here.
 if [ -d ~/.bashrc.d ]; then
-	. ~/.bashrc.d/*
+	for f in ~/.bashrc.d/*; do
+		[ -f "$f" ] && . "$f"
+	done
 fi
 

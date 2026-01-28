@@ -14,8 +14,8 @@ set -u
 ###############################################################################
 
 readonly -a DIRS=(
-	${HOME}
-	${HOME}/.bashrc.d
+	.
+	.bashrc.d
 )
 
 readonly -a DOTFILES_0=(
@@ -40,18 +40,18 @@ install_file() {
 		return 1
 	fi
 
-	local src=../dotfiles/${2}
+	local src=../dotfiles/$1/$2
 	if ! [[ -f ${src} ]]; then
 		echo "src dot file does not exist!!"
 		return 1
 	fi
 
-	local dest=$1/$2
+	local dest=${HOME}/$1/$2
 	if [[ -f ${dest} ]]; then
 		rm ${dest}
 	fi
 
-	ln ${src} ${dest} && echo "installed $2 to $1"
+	ln ${src} ${dest} && echo "installed $2 to ${HOME}/$1"
 	return
 }
 
@@ -61,6 +61,7 @@ install_file() {
 
 for (( i=0 ; i < ${#DIRS[@]} ; i=$(($i+1)) )); do
 	dir=${DIRS[$i]}
+	[[ -d ${HOME}/${dir} ]] || mkdir ${dir}
 	declare -n files=DOTFILES_$i
 
 	for f in "${files[@]}"; do 

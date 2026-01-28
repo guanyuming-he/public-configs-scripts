@@ -25,7 +25,7 @@ findsrc() {
 
 	# Deduplicate exts
 	local uniq_exts=$(
-		printf '%s\n' "${exts[@]}" | sort -u | paste-sd'|'
+		printf '%s\n' "${exts[@]}" | sort -u | paste -sd'|'
 	)
 	
 	local regex=".*\\.(${uniq_exts})$"
