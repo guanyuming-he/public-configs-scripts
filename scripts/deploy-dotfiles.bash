@@ -15,13 +15,18 @@ set -u
 
 readonly -a DIRS=(
 	${HOME}
+	${HOME}/.bashrc.d
 )
 
 readonly -a DOTFILES_0=(
 	.bashrc
-	.gitconfig
-	.gitignore
+	.bash_aliases
 	.vimrc
+)
+readonly -a DOTFILES_1=(
+	10findsrc.bash	
+	10prompt.bash	
+	10texlive.bash	
 )
 
 ###############################################################################
