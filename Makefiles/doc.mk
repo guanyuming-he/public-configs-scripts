@@ -33,11 +33,12 @@ DL ?= curl -L
 PROXY ?= socks5h://127.0.0.1:6789
 
 # Pkg records
-make	:= https://www.gnu.org/software/make/manual/make.html make.html
 gcc		:= https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc.pdf gcc.pdf
 gdb		:= https://sourceware.org/gdb/current/onlinedocs/gdb.pdf gdb.pdf
+gpg		:= https://www.gnupg.org/documentation/manuals/gnupg.pdf gnupg.pdf
+make	:= https://www.gnu.org/software/make/manual/make.html make.html
 
-PKGS := make gcc gdb
+PKGS := gcc gdb gpg make
 
 # Pkg record functions
 uri_of = $(word 1, $($1))
@@ -47,9 +48,16 @@ fname_of = $(word 2, $($1))
 # Rules (pkg related)
 ######################################################################
 
+# Pkg install function
+install_cmd_of = \
+	mkdir -p $(DOC_DIR)/$1; \
+	install -o root -g root -m 0644 \
+		$(WORK_DIR)/$(call fname_of,$1) \
+		$(DOC_DIR)/$1/$(call fname_of,$1)
+
 # Install self; always updates.
 .PHONY: self
-self : $(DOC_DIR)/Makefile
+self : 
 	su -c "install -o root -g root -m 0644 $(THIS_MAKEFILE) \
 		$(DOC_DIR)/Makefile"
 
@@ -68,15 +76,8 @@ $(WORK_DIR)/$(call fname_of,$1) : | $(WORK_DIR)
 		-o $(WORK_DIR)/$(call fname_of,$1)
 
 $1-dl : $(WORK_DIR)/$(call fname_of,$1)
-
-define $1_install_cmd
-mkdir -p $(DOC_DIR)/$1; \
-install -o root -g root -m 0644 \
-	$(WORK_DIR)/$(call fname_of,$1) \
-	$(DOC_DIR)/$1/$(call fname_of,$1)
-endef
 $(DOC_DIR)/$1/$(call fname_of,$1) : $(WORK_DIR)/$(call fname_of,$1)
-	su -c "$($(1)_install_cmd)"
+	su -c "$(call install_cmd_of,$1)"
 
 $1-install : $(DOC_DIR)/$1/$(call fname_of,$1)
 
@@ -94,5 +95,5 @@ dl-all :
 	$(MAKE) -f $(THIS_MAKEFILE) $(PKGS:%=%-dl)
 # For the sake of never downloading as root, execute dl-all first
 install-all : dl-all
-	su -c "$(foreach p,$(PKGS),$($(p)_install_cmd);)"
+	su -c "$(foreach p,$(PKGS),$(call install_cmd_of,$1);)"
 
