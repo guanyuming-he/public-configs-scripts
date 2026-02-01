@@ -16,6 +16,7 @@ set -u
 readonly -a DIRS=(
 	.
 	.bashrc.d
+	.config/vifm
 )
 
 readonly -a DOTFILES_0=(
@@ -27,6 +28,9 @@ readonly -a DOTFILES_1=(
 	10findsrc.bash	
 	10prompt.bash	
 	10texlive.bash	
+)
+readonly -a DOTFILES_2=(
+	vifmrc
 )
 
 ###############################################################################
