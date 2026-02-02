@@ -1,4 +1,3 @@
-#!/bin/bash
 #
 # Common functions used by clone-gitrepos.bash only.
 # 
