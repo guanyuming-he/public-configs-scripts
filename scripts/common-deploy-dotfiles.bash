@@ -29,7 +29,7 @@ install_file() {
 main() {
 	for (( i=0 ; i < ${#DIRS[@]} ; i=$(($i+1)) )); do
 		dir=${DIRS[$i]}
-		[[ -d ${HOME}/${dir} ]] || mkdir ${dir}
+		[[ -d ${HOME}/${dir} ]] || mkdir ${HOME}/${dir}
 		declare -n files=DOTFILES_$i
 
 		for f in "${files[@]}"; do 
