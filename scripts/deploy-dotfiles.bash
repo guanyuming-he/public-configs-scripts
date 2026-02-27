@@ -25,6 +25,7 @@ readonly -a DOTFILES_0=(
 	.vimrc
 )
 readonly -a DOTFILES_1=(
+	10ascii.bash
 	10findsrc.bash	
 	10prompt.bash	
 	10texlive.bash	
