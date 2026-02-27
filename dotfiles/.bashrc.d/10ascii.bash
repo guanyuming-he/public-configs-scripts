@@ -4,11 +4,6 @@
 # funcs to check if any file has any character other than printable ASCIIs.
 
 _ascii_check_params() {
-	if [[ $# != "1" ]]; then
-		echo "invalid num of args."
-		return 1
-	fi
-
 	if ! [[ -f "$1" ]]; then
 		echo "$1 cannot be accessed as a file."
 		return 1
