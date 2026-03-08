@@ -33,12 +33,16 @@ DL ?= curl -L
 PROXY ?= socks5h://127.0.0.1:6789
 
 # Pkg records
-gcc		:= https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc.pdf gcc.pdf
-gdb		:= https://sourceware.org/gdb/current/onlinedocs/gdb.pdf gdb.pdf
-gpg		:= https://www.gnupg.org/documentation/manuals/gnupg.pdf gnupg.pdf
-make	:= https://www.gnu.org/software/make/manual/make.html make.html
+as			:= https://sourceware.org/binutils/docs/as.html as.html
+binutils	:= https://sourceware.org/binutils/docs/binutils.html binutils.html
+coreutils	:= https://www.gnu.org/software/coreutils/manual/coreutils.html	coreutils.html
+gcc			:= https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc.pdf gcc.pdf
+gdb			:= https://sourceware.org/gdb/current/onlinedocs/gdb.pdf gdb.pdf
+gpg			:= https://www.gnupg.org/documentation/manuals/gnupg.pdf gnupg.pdf
+ld			:= https://sourceware.org/binutils/docs/ld.html ld.htmls
+make		:= https://www.gnu.org/software/make/manual/make.html make.html
 
-PKGS := gcc gdb gpg make
+PKGS := as binutils coreutils gcc gdb gpg ld make
 
 # Pkg record functions
 uri_of = $(word 1, $($1))
