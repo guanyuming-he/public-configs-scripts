@@ -36,9 +36,10 @@ PROXY ?= socks5h://127.0.0.1:6789
 gcc		:= https://gcc.gnu.org/onlinedocs/gcc-15.2.0/gcc.pdf gcc.pdf
 gdb		:= https://sourceware.org/gdb/current/onlinedocs/gdb.pdf gdb.pdf
 gpg		:= https://www.gnupg.org/documentation/manuals/gnupg.pdf gnupg.pdf
+ld		:= https://ftp.gnu.org/old-gnu/Manuals/ld-2.9.1/html_mono/ld.html ld.html
 make	:= https://www.gnu.org/software/make/manual/make.html make.html
 
-PKGS := gcc gdb gpg make
+PKGS := gcc gdb gpg ld make
 
 # Pkg record functions
 uri_of = $(word 1, $($1))
