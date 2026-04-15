@@ -6,11 +6,11 @@ if ! [[ ${PATH} == *texlive* ]]; then
 	# prefer home over sys
 	if [[ -d ${homTeX} ]]; then
 		export PATH="${homTeX}/bin/x86_64-linux:${PATH}"
-		export MANPATH="${homTeX}/texmf-dist/doc/man:${PATH}"
-		export INFOPATH="${homTeX}/texmf-dist/doc/info:${PATH}"
+		export MANPATH="${homTeX}/texmf-dist/doc/man:${MANPATH}"
+		export INFOPATH="${homTeX}/texmf-dist/doc/info:${INFOPATH}"
 	elif [[ -d ${sysTeX} ]]; then
 		export PATH="${sysTeX}/bin/x86_64-linux:${PATH}"
-		export MANPATH="${sysTeX}/texmf-dist/doc/man:${PATH}"
-		export INFOPATH="${sysTeX}/texmf-dist/doc/info:${PATH}"
+		export MANPATH="${sysTeX}/texmf-dist/doc/man:${MANPATH}"
+		export INFOPATH="${sysTeX}/texmf-dist/doc/info:${INFOPATH}"
 	fi
 fi
