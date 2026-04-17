@@ -7,14 +7,18 @@
 ask_yn() {
 	local yn
 	
+	yn="${yn,,}"  # convert to lowercase
+	yn="${yn// /}" # remove trailing spaces
 	while true; do
 		read -p "$1 [y/n]:" yn
 		case ${yn} in
-			y|Y|yes|Yes|YES) return 0 ;;
-			n|N|no|No|NO) return 1 ;;
+			y|yes) return 0 ;;
+			n|no) return 1 ;;
 			*) ;;
 		esac
 	done
 }
 
-
+error() {
+	echo "[ERROR] $*" >&2
+}
