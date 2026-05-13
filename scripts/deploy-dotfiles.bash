@@ -28,7 +28,8 @@ readonly -a DOTFILES_1=(
 	10ascii.bash
 	10findsrc.bash	
 	10prompt.bash	
-	10texlive.bash	
+	10texlive.bash
+	10qr.bash
 )
 readonly -a DOTFILES_2=(
 	vifmrc
