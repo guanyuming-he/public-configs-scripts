@@ -7,10 +7,10 @@
 ask_yn() {
 	local yn
 	
-	yn="${yn,,}"  # convert to lowercase
-	yn="${yn// /}" # remove trailing spaces
 	while true; do
 		read -p "$1 [y/n]:" yn
+		yn="${yn,,}"  # convert to lowercase
+		yn="${yn// /}" # remove trailing spaces
 		case ${yn} in
 			y|yes) return 0 ;;
 			n|no) return 1 ;;
