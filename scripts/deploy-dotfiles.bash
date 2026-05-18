@@ -1,5 +1,7 @@
 #!/bin/bash
 
+echo "DEPRECATED: now use salt instead!"
+
 # Dotfiles are installed to dirs by creating links between them.
 # Symlinks may not work for some programs which refuse to read symlink configs
 # (probably for security reasons)
