@@ -18,7 +18,7 @@ set textwidth=79 " also tw
 set formatoptions+=t " also fo
 
 " Do not automatically insert the completion item
-set completeopt+=noinsert
+set completeopt+=menuone,noinsert
 
 " The semicolon makes Vim searches upwards in all parent dirs.
 set tags+=./tags;
