@@ -1,0 +1,10 @@
+# /srv/salt/map.jinja
+
+# Each minion must declare in a grain, main_user as the primary user name.
+{% set user = grains.get('main_user') %}
+
+{% if not user %}
+  {% do raise('Edit: Missing grain: main_user') %}
+{% endif %}
+
+{% set home = salt['user.info'](user)['home'] %}
