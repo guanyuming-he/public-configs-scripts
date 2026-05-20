@@ -1,0 +1,197 @@
+# /srv/salt/utility/map.jinja
+
+{% set utility_pkgs = {
+
+  'Debian': {
+    'shell_utils': [
+      'bash-completion',
+      'tree',
+    ],
+    'storage_utils': [
+      'p7zip-full',
+      'gparted',
+      'fdisk',
+      'zip',
+      'unzip',
+      'rsync',
+      'cryptsetup',
+    ],
+    'network_utils': [
+      'curl',
+      'wget',
+      'nmap',
+      'dnsutils',
+      'netcat-openbsd',
+      'tcpdump',
+      'socat',
+    ],
+    'system_utils': [
+      'pciutils',
+      'usbutils',
+    ],
+  },
+
+  'Arch': {
+
+    'shell_utils': [
+      'bash-completion',
+      'tmux',
+      'screen',
+      'zsh',
+      'fish',
+      'ripgrep',
+      'fd',
+      'fzf',
+      'bat',
+      'eza',
+      'tree',
+      'jq',
+      'yq',
+      'htop',
+      'btop',
+      'ncdu',
+      'tealdeer',
+    ],
+
+    'storage_utils': [
+      '7zip',
+      'unrar',
+      'zip',
+      'unzip',
+      'rsync',
+      'rclone',
+      'smartmontools',
+      'gdu',
+      'cryptsetup',
+    ],
+
+    'network_utils': [
+      'curl',
+      'wget',
+      'nmap',
+      'mtr',
+      'whois',
+      'bind',
+      'openbsd-netcat',
+      'iperf3',
+      'tcpdump',
+      'socat',
+    ],
+
+    'system_utils': [
+      'strace',
+      'ltrace',
+      'lsof',
+      'pciutils',
+      'usbutils',
+      'dmidecode',
+      'file',
+      'binutils',
+      'progress',
+    ],
+
+    'development_utils': [
+      'git',
+      'git-lfs',
+      'base-devel',
+      'cmake',
+      'meson',
+      'ninja',
+      'pkgconf',
+      'gdb',
+      'clang',
+      'lldb',
+      'python-pip',
+      'python-virtualenv',
+    ],
+
+    'security_utils': [
+      'gnupg',
+      'pinentry',
+      'ykman',
+      'age',
+    ],
+  },
+
+  'RedHat': {
+
+    'shell_utils': [
+      'bash-completion',
+      'tmux',
+      'screen',
+      'zsh',
+      'fish',
+      'ripgrep',
+      'fd-find',
+      'fzf',
+      'bat',
+      'eza',
+      'tree',
+      'jq',
+      'yq',
+      'htop',
+      'btop',
+      'ncdu',
+      'tldr',
+    ],
+
+    'storage_utils': [
+      'p7zip',
+      'unrar',
+      'zip',
+      'unzip',
+      'rsync',
+      'rclone',
+      'smartmontools',
+      'gdu',
+      'cryptsetup',
+    ],
+
+    'network_utils': [
+      'curl',
+      'wget',
+      'nmap',
+      'mtr',
+      'whois',
+      'bind-utils',
+      'nc',
+      'iperf3',
+      'tcpdump',
+      'socat',
+    ],
+
+    'system_utils': [
+      'strace',
+      'ltrace',
+      'lsof',
+      'pciutils',
+      'usbutils',
+      'dmidecode',
+      'file',
+      'binutils',
+      'progress',
+    ],
+
+    'development_utils': [
+      'git',
+      'git-lfs',
+      '@Development Tools',
+      'cmake',
+      'meson',
+      'ninja-build',
+      'pkgconf',
+      'gdb',
+      'clang',
+      'lldb',
+      'python3-pip',
+      'python3-virtualenv',
+    ],
+
+    'security_utils': [
+      'gnupg2',
+      'pinentry',
+      'yubikey-manager',
+      'age',
+    ],
+  },
+} %}

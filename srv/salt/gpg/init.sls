@@ -14,7 +14,7 @@ gpg_dir:
 
 gpg_key_files:
   file.recurse:
-    - name: {{home}}/.config/salt-gpg-public
+    - name: {{home}}/.salt_working/gpg/public
     - source: salt://gpg/files/public
     - user: {{user}}
     - group: {{user}}
@@ -26,7 +26,7 @@ gpg_key_files:
 gpg_import_public_keys:
   cmd.run:
     - name: |
-        find {{home}}/.config/salt-gpg-public -type f -name '*.gpg' -print0 \
+        find {{home}}/.salt_working/gpg/public -type f -name '*.gpg' -print0 \
           | xargs -0 gpg --import
     - runas: {{user}}
     - env:

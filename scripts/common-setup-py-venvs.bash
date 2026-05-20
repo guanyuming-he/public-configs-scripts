@@ -37,7 +37,7 @@ setup_venv() {
 
 	# Venv existence check
 	if [[ -d "$venv_path" ]]; then
-		if ask_yn "Venv '$venv_path' exists. Overwrite? (yes/no): "; then
+		if ask_yn "Venv '$venv_path' exists. Overwrite?"; then
 			rm -rf "$venv_path"
 		else
 		   	echo "Skipping venv creation"; return 0
@@ -49,7 +49,7 @@ setup_venv() {
 
 	. "$venv_path/bin/activate"
 
-	mutual_actions "$venv_path"
+	mutual_actions 
 
 	if  [[ -r "$req" ]]; then
 		echo "Installing requirements from $req"

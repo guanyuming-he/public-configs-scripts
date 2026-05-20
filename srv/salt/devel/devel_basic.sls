@@ -1,6 +1,8 @@
 # The devel-basic.sls defines packages and configs for basic development on GNU/Linux,
 # including basic C/C++ devel tools, as well as auxiliry tools such us GNU binutils.
 
+{% from map.jinja import pkg with context %}
+
 devel_basic_pkgs:
   pkg.installed:
     - pkgs:
@@ -16,7 +18,7 @@ devel_basic_pkgs:
       - cmake
       # compilers
       - gcc
-      - g++
+      - {{ pkg['g++'] }}
       # version mgmt
       - git
       # auxiliary GNU packages
@@ -25,7 +27,7 @@ devel_basic_pkgs:
       - gettext
       # lib tools
       - libtool 
-      - pkg-config
+      - {{ pkg['pkgconf'] }}
       # debugger
       - gdb
       # tracing
