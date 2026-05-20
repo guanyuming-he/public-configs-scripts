@@ -1,6 +1,6 @@
 # /srv/salt/utility/init.sls
 
-{% from map.jinja import pkg with context %}
+{% from 'map.jinja' import pkg with context %}
 
 utility_packages:
   pkg.installed:
@@ -10,7 +10,6 @@ utility_packages:
       - bash-completion
       - less
       - tree
-      - which
 
       # Storage
       - cryptsetup
@@ -18,7 +17,6 @@ utility_packages:
       - rsync
       - tar
       - unzip
-      - xz
       - {{ pkg['7zip'] }}
 
       # Networking
@@ -28,7 +26,7 @@ utility_packages:
       - tcpdump
       - wget
       - {{ pkg['dnsutils'] }}
-      - {{ pkg['openssh-client'] }}
+      - {{ pkg['openssh_client'] }}
 
       # System inspection
       - lsof
