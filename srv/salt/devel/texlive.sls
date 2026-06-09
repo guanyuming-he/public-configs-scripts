@@ -13,17 +13,17 @@ tl_working_dir:
 
 # Needs gpg public key for texlive.
 include:
-  gpg
+  - gpg
 
 install_tl:
  cmd.script:
-  - source: salt::/devel/files/scripts/install-texlive.bash
+  - source: salt://devel/files/scripts/install-texlive.bash
   - cwd: {{home}}/.salt_working/texlive
   - runas: {{user}}
   - shell: bash
   - creates: {{home}}/texlive
+  # Unless tlmgr exists.
+  - unless: 'su -l {{user}} -c "command -v tlmgr >/dev/null 2>&1"'
   - require:
-    - pkg: curl
-    - pkg: perl
     - file: tl_working_dir
     - sls: gpg

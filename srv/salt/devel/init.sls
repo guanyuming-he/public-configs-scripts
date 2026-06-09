@@ -5,7 +5,6 @@ include:
   # Basic devel needs:
   - devel.devel_basic
   - devel.git
-
 {% if 'go' in devel_roles %}
   - devel.go
 {% endif %}

@@ -33,5 +33,9 @@ devel_basic_pkgs:
       # tracing
       - strace
       - ltrace
+      # networking
+      - curl
+      # scripting
+      - perl
       
 

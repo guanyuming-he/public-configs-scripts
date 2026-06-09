@@ -2,7 +2,7 @@
 
 {% from 'desktop/map.jinja' import desktop %}
 
-{% set desktop_apps = grains.get('desktop', []) %}
+{% set desktop_apps = grains.get('desktop_apps', []) %}
 
 include:
   - desktop.basic_apps
