@@ -5,6 +5,9 @@ include:
   # Basic devel needs:
   - devel.devel_basic
   - devel.git
+{% if 'c' in devel_roles or 'cpp' in devel_roles or 'c++' in devel_roles %}
+  - devel.c++
+{% endif %}
 {% if 'go' in devel_roles %}
   - devel.go
 {% endif %}

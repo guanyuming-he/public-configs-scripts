@@ -21,4 +21,5 @@ set completeopt+=noinsert
 " The semicolon makes Vim searches upwards in all parent dirs.
 set tags+=./tags;
 
-vim.lsp.enable('clangd')
+" ./lua/lspconfig.lua
+lua require('lspconfig')
