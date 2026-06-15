@@ -28,14 +28,14 @@ call plug#begin()
 
 Plug 'lervag/vimtex'
 Plug 'whonore/Coqtail'
-Plug 'xavierd/clang_complete'
+"Plug 'xavierd/clang_complete'
 
 call plug#end()
 
 " ------------------------- Clang complete config ------------------------
-let g:clang_library_path='/usr/lib/llvm-19/lib/libclang-19.so.1'
-let g:clang_use_library=1
-let g:clang_auto_user_options='compile_commands.json'
+"let g:clang_library_path='/usr/lib/llvm-19/lib/libclang-19.so.1'
+"let g:clang_use_library=1
+"let g:clang_auto_user_options='compile_commands.json'
 
 " ------------------------- Coq editing ------------------------
 " Use a color scheme that doesn't mess up the highlighting.

@@ -10,6 +10,7 @@ findsrc() {
 			c) exts+=(c h) ;;
 			coq|rocq) exts+=(v) ;;
 			c++|cpp) exts+=(c h cc hh cpp hpp) ;;
+			cu|cuda) exts+=(c h cc hh cpp hpp) ;;
 			go) exts+=(go) ;;
 			java) exts+=(java) ;;
 			ml|ocaml) exts+=(ml mli) ;;
