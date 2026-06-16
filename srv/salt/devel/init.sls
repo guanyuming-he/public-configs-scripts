@@ -2,7 +2,8 @@
 
 
 include:
-  # Basic devel needs:
+  # Basic devel needs (this name instead of basic,
+  # to differentiate from the basic prog lang.)
   - devel.devel_basic
   - devel.git
 {% if 'c' in devel_roles or 'cpp' in devel_roles or 'c++' in devel_roles %}
@@ -22,4 +23,10 @@ include:
 {% endif %}
 {% if 'texlive' in devel_roles %}
   - devel.texlive
+{% endif %}
+{% if 'spack' in devel_roles %}
+  - devel.spack
+{% endif %}
+{% if 'spack' in devel_roles %}
+  - devel.spack
 {% endif %}

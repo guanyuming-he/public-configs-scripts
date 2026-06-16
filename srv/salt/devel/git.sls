@@ -22,3 +22,10 @@ git_ignore:
     - user: {{user}}
     - group: {{user}}
     - mode: 600
+
+{{home}}/Documents/git_repos:
+  file.directory:
+    - user: {{user}}
+    - group: {{user}}
+    - mode: 755
+    - makedirs: True

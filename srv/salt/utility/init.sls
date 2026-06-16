@@ -35,4 +35,7 @@ utility_packages:
       - smartmontools
       - usbutils
 
+      # Basic math
+      - bc
+
 

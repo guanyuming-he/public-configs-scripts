@@ -1,0 +1,7 @@
+config:
+  url_fetch_method: curl
+  build_stage:
+    - ~/tmpfs/spack-stage
+    - ~/.spack/stage
+    - $tempdir/$user/spack-stage
+    - $user_cache_path/stage

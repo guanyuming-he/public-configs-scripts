@@ -37,3 +37,4 @@ devel_basic_pkgs:
       - curl
       # scripting
       - perl
+
