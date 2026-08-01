@@ -5,4 +5,7 @@ desktop_graphics_apps:
     - pkgs:
       - gimp
       - inkscape
+      # for Inkscape
+      - pstoedit
+      - python3-tinycss2
 

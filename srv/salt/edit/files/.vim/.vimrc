@@ -32,15 +32,20 @@ Plug 'whonore/Coqtail'
 
 call plug#end()
 
+" ------------------------- Color schemes ------------------------
+" Use color schemes that don't mess up the highlighting.
+hi def CoqtailChecked ctermbg=30
+hi def CoqtailSent    ctermbg=31
+augroup FiletypeColors
+	autocmd!
+	autocmd FileType tex colorscheme desert
+augroup END
+
 " ------------------------- Clang complete config ------------------------
 "let g:clang_library_path='/usr/lib/llvm-19/lib/libclang-19.so.1'
 "let g:clang_use_library=1
 "let g:clang_auto_user_options='compile_commands.json'
 
-" ------------------------- Coq editing ------------------------
-" Use a color scheme that doesn't mess up the highlighting.
-hi def CoqtailChecked ctermbg=30
-hi def CoqtailSent    ctermbg=31
 
 " Replace all beautiful characters in Software Foundation
 " with the Coq ASCII characters.
